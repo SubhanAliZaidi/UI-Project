@@ -1,5 +1,7 @@
 import React from 'react';
 import img1 from '../assets/icon-usp6.png';
+import img2 from '../assets/72ab4bb0b57577337af1b4499c3ff120.png'
+import ResultCard from './ResultCard';
 
 export default function ResultComponent() {
   return (
@@ -14,7 +16,14 @@ export default function ResultComponent() {
                 <div className="path">Home / Delhi / Jama Masjid</div>
 
                 <div className="sort">
-                  Sort By:
+                  <label for="sortBy">Sort By :</label>
+                  <select name="sortBy" id="sortBy">
+                    <option value="NoBroker Rank">NoBroker Rank</option>
+                    <option value="Posted On (Newest First)">Posted On (Newest First)</option>
+                    <option value="Posted On (Oldest First)">Posted On (Oldest First)</option>
+                    <option value="Rent (Low To High)">Rent (Low To High)</option>
+                    <option value="Rent (High To Low)">Rent (High To Low)</option>
+                  </select>
                 </div>
 
               </div>
@@ -32,10 +41,8 @@ export default function ResultComponent() {
               </div>
             </div>
 
-            <section className="actualresult">
-              
-            </section>
-            
+            <ResultCard />
+
           </div>
         </div>
 
@@ -56,6 +63,8 @@ export default function ResultComponent() {
             </ul>
 
           </div>
+
+          <img src={img2} alt="ads" />
         </div>
 
 

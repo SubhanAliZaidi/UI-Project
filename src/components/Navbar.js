@@ -1,9 +1,13 @@
 import React from 'react';
 import logo from '../assets/logo.jpg';
 import Search from './Search';
+import payrentimg from '../assets/payrent.png' 
+import mybookingimg from '../assets/myBooking.png' 
+import hamburgericon from '../assets/hamburger-menu.png' 
 
 
 export default function Navbar() {
+  
   return (
     <>
 
@@ -17,12 +21,13 @@ export default function Navbar() {
         </div>
 
         <div className="menuside">
-          <button className='firstbtn'>My Bookings</button>
-          <button className='secondbtn'>Pay Rent</button>
+          <button className='firstbtn'><img src={mybookingimg} alt="mybookings" />My Bookings</button>
+          <button className='secondbtn'>
+            <img src={payrentimg} alt="pay rent" /><span>Pay Rent</span></button>
           <button className='thirdbtn'>Post Your Property</button>
           <button className='fourthbtn'>Sign up</button>
           <button className='fifthbtn'>Log in</button>
-          <button className='sixthbtn'>Menu</button>
+          <button className='sixthbtn'><img src={hamburgericon} alt="menu" />Menu</button>
         </div>
       </navbar>
       <Search />

@@ -6,6 +6,7 @@ export default function SearchFilter() {
       <div className="searchfilter">
         <button>Filter</button>
         <button>Premium Filters</button>
+        <p className="floattitle">New</p>
         <div className="main">
           <div className="resetbtn">Reset</div>
 

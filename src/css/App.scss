@@ -8,7 +8,10 @@
 $first-accent-color: #009587;
 $second-accent-color: #e3324a;
 $border-color: #d5d5d5;
-$primary-color: white;
+$primary-color: #ffffff;
+$primary-text-color: #464646;
+$background-color: #f2f2f2;
+$secondary-text-color: #999999;
 
 @mixin flex($align, $justify, $direction, $gap) {
 	display: flex;
@@ -19,7 +22,7 @@ $primary-color: white;
 }
 
 body {
-	background-color: #f2f2f2;
+	background-color: $background-color;
 }
 
 .parent {
@@ -36,7 +39,7 @@ body {
 	border-bottom: 1px solid $border-color;
 	background-color: $primary-color;
 
-	& img {
+	& > img {
 		margin: 5px;
 	}
 
@@ -69,14 +72,25 @@ body {
 			border: 1px solid $border-color;
 			padding-block: 4px;
 			padding-inline: 7px;
-			color: #999999;
-			font-size: 14px;
+			color: $secondary-text-color;
+			font-size: 13px;
 			border-radius: 2px;
+
+			img {
+				margin-right: 6px;
+			}
+
+			span {
+				display: inline-block;
+				padding-left: 7px;
+        margin-top: 1px;
+				border-left: 1px solid $border-color;
+			}
 		}
 
 		.thirdbtn {
 			background-color: $first-accent-color;
-			color: white;
+			color: $primary-color;
 			border: none;
 		}
 
@@ -120,7 +134,7 @@ body {
 			border: none;
 			padding: 8px 8px 8px 130px;
 			font-size: 14px;
-			color: #999999;
+			color: $secondary-text-color;
 
 			&:focus {
 				border: none;
@@ -133,7 +147,7 @@ body {
 			position: relative;
 			display: inline-block;
 			max-width: 160px;
-			white-space: nowrap;
+			$primary-color-space: nowrap;
 			text-align: left;
 			padding: 5px 25px 6px 10px;
 			margin-right: -119px;
@@ -147,7 +161,7 @@ body {
 		}
 
 		button {
-			color: white;
+			color: $primary-color;
 			padding: 7px 25px;
 			border: none;
 			height: 40px;
@@ -179,9 +193,18 @@ body {
 
 		.list {
 			background-color: #008387;
-			color: white;
-			border-radius: 11px;
+			color: $primary-color;
+			border-radius: 7px;
 			padding: 8px 8px 8px 8px;
+
+			div {
+				@include flex(center, center, row, 0px);
+
+				img {
+					margin-right: 5px;
+					width: 17px;
+				}
+			}
 		}
 	}
 }
@@ -196,12 +219,27 @@ body {
 	top: 127px;
 	overflow: hidden;
 
+  .floattitle{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color: $second-accent-color;
+    padding: 0px 6px;
+    margin: 0;
+    font-size: 10px;
+    z-index: 1;
+    color: $primary-color;
+    border-radius: 50vw;
+  }
+
 	button {
 		width: 50%;
 		position: relative;
 		border: none;
-		padding: 10px 0px;
-		background-color: white;
+		padding: 11px 0px;
+		background-color: $primary-color;
+    font-size: 15px;
+    color: $primary-text-color;
 
 		&:first-child {
 			border-bottom: 2px solid $first-accent-color;
@@ -225,9 +263,9 @@ body {
 			column-gap: 17px;
 			flex-wrap: wrap;
 			flex-direction: row;
-      
+
 			span {
-        padding: 8px;
+				padding: 8px;
 				margin: 7px 0px;
 				background-color: #f8f8f8;
 				font-size: 12px;
@@ -237,82 +275,80 @@ body {
 
 				&:hover {
 					background-color: $first-accent-color;
-					color: white;
+					color: $primary-color;
 				}
 			}
 		}
 
 		.availabilitycontent {
-      @include flex(center, space-between, row, 0px);
-      flex-wrap: wrap;
-      row-gap: 8px;
-      
+			@include flex(center, space-between, row, 0px);
+			flex-wrap: wrap;
+			row-gap: 8px;
+
 			input[type="radio"] {
 				width: 15px;
 				height: 15px;
 				accent-color: $first-accent-color;
 			}
 
-      .radiobtn{
-        width: calc((100% - 65px) / 2);
-      }
-    
+			.radiobtn {
+				width: calc((100% - 65px) / 2);
+			}
 		}
 
-    .tenantcontent{
-      @include flex(center, flex-start, row, 8px);
-      
-      & .radiobtn{
-        width: calc((100% - 20px) / 3);
-      }
-    }
+		.tenantcontent {
+			@include flex(center, flex-start, row, 8px);
 
-    .apartmentcontent{
-      @include flex(flex-start, flex-start, column, 8px);
-    }
+			& .radiobtn {
+				width: calc((100% - 20px) / 3);
+			}
+		}
 
-    .furnishingcontent{
-      @include flex(center, flex-start ,row, 8px);
-      
-      & .radiobtn{
-        width: calc((100% - 20px) / 3);
-      }
-    }
+		.apartmentcontent {
+			@include flex(flex-start, flex-start, column, 8px);
+		}
 
-    .parkingcontent{
-      @include flex(center, flex-start ,row, 8px);
-      flex-wrap: wrap;
-      
-      & .radiobtn{
-        min-width: calc((100% - 20px) / 2);
-      }
-    }
+		.furnishingcontent {
+			@include flex(center, flex-start, row, 8px);
+
+			& .radiobtn {
+				width: calc((100% - 20px) / 3);
+			}
+		}
+
+		.parkingcontent {
+			@include flex(center, flex-start, row, 8px);
+			flex-wrap: wrap;
+
+			& .radiobtn {
+				min-width: calc((100% - 20px) / 2);
+			}
+		}
 	}
 }
 
-.radiobtn{
-  @include flex(center,flex-start,row, 7px);
+.radiobtn {
+	@include flex(center, flex-start, row, 7px);
 }
 
-label{
-  font-size: 13px;
+label {
+	font-size: 13px;
 }
 
 .titleheading {
-  font-size: 12px;
-  font-weight: 600;
+	font-size: 12px;
+	font-weight: 600;
 }
 
 input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
-  accent-color: $first-accent-color;
+	width: 15px;
+	height: 15px;
+	accent-color: $first-accent-color;
 }
 
 input[type="range"] {
-  accent-color: $first-accent-color;
+	accent-color: $first-accent-color;
 }
-
 
 .slider {
 	width: 100%;
@@ -324,73 +360,259 @@ input[type="range"] {
 }
 
 .result-parent {
-  position: absolute;
-  right: 0;
-  z-index: -1;
-  width: calc(100vw - 420px);
-  height: 500vh;
-  top: 127px;
-  background-color: #f2f2f2;
-  @include flex(center, flex-start,row, 10px);
+	position: absolute;
+	right: 0;
+	z-index: -1;
+	width: calc(100vw - 420px);
+	height: 500vh;
+	top: 127px;
+	background-color: $background-color;
+	@include flex(center, flex-start, row, 10px);
 
+	.result {
+		width: 720px;
+		height: 100%;
+		background-color: $background-color;
 
-  .result{
-    width: 720px;
-    background-color: limegreen;
-    height: 100%;
-    background-color: #f2f2f2;
-    
-    .result-child{
-      @include flex(center, center, column, 10px);
-      border-radius: 2px;
-      
-      .directorypath{
-        width: 720px;
-        padding: 15px;
-        background-color: white;
-        
-        .pathchild{
-          height: 46px;
-          @include flex(center,space-between, row, 0px);
+		.result-child {
+			@include flex(center, center, column, 10px);
+			border-radius: 2px;
 
-          .path{
-            width: 60%;
-            font-size: 13px;
-          }
+			.directorypath {
+				width: 720px;
+				padding: 15px;
+				background-color: $primary-color;
 
-          span{
-            margin-top: 15px;
-          }
-        }
+				.pathchild {
+					height: 46px;
+					@include flex(center, space-between, row, 0px);
 
-        .showingresult{
-          @include flex(center, center, row, 0px);
+					.path {
+						width: 60%;
+						font-size: 13px;
+					}
 
-          img{
-            margin: 10px;
-          }
-        }
-      }
+					.sort {
+						select {
+							padding: 9px;
+							border-radius: 0px;
+							margin-left: 6px;
+							font-size: 13px;
 
-      .actualresult{
-        margin-top: 15px;
-        height:429px;
-        width: 100%;
-        background-color: white;
-      }
-    }
+							&:is(:focus, :active) {
+								border: 1px solid $border-color;
+							}
 
-  }
+							option {
+								padding: 9px;
+								font-size: 13px;
+							}
+						}
+					}
 
-  .quicklinkbar{
-    width: 180px;
-    height: 100%;
-    background-color: cyan;
+					span {
+						margin-top: 15px;
+					}
+				}
 
-    .quicklink-card{
-      background-color: white;
-      padding: 10px;
-      font-size: 16px;
-    }
-  }
+				.showingresult {
+					@include flex(center, center, row, 0px);
+
+					img {
+						margin: 10px;
+					}
+				}
+			}
+
+			.actualresult {
+				margin-top: 15px;
+				height: 369px;
+				width: 100%;
+				background-color: $primary-color;
+				box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 4px;
+
+				.firstchild,
+				.secondchild,
+				.thirdchild {
+					padding: 15px;
+				}
+
+				.firstchild {
+					@include flex(center, space-between, row, 0px);
+					border-bottom: 1px solid $border-color;
+
+					a {
+						font-size: 14px;
+						font-weight: 600;
+					}
+
+					p {
+						font-size: 13px;
+						color: #787676;
+						margin-top: 5px;
+						margin-bottom: 0px;
+
+						a {
+							text-decoration: underline;
+							font-weight: normal;
+							font-size: 13px;
+							color: $primary-text-color;
+						}
+					}
+
+					button {
+						width: 50px;
+						aspect-ratio: 16/9;
+						padding: 6px 8px;
+						background-color: #fff;
+						border-top-left-radius: 50vw;
+						border-bottom-left-radius: 50vw;
+						border: 1px solid $border-color;
+						margin-right: -16px;
+					}
+				}
+
+				.secondchild {
+					@include flex(center, center, row, 0px);
+					border-bottom: 1px solid $border-color;
+
+					.rentinfo {
+						width: calc(100% / 3);
+						padding: 3px 10px;
+						text-align: center;
+						color: $primary-text-color;
+
+						& div:first-child {
+							font-size: 14px;
+							font-weight: 600;
+						}
+						& div:last-child {
+							font-size: 11px;
+						}
+					}
+				}
+
+				.thirdchild {
+					@include flex(center, space-between, row, 15px);
+
+					.imagecontainer {
+						width: 36%;
+						height: 180px;
+						background-color: crimson;
+					}
+
+					.infocontainer {
+						width: 64%;
+						height: 180px;
+
+						.roominfo {
+							width: 100%;
+							height: calc(100% - 55px);
+							border: 3px double $border-color;
+							@include flex(center, center, row, 0px);
+							row-gap: 5px;
+							flex-wrap: wrap;
+
+							hr {
+								width: 100%;
+								margin: 0;
+								padding: 0;
+								background-color: $border-color;
+							}
+
+							.sections {
+								width: calc(100% / 2);
+								font-size: 12px;
+								padding: 5px;
+								@include flex(center, flex-start, row, 0px);
+
+								.sectioninfo {
+									margin-left: 15px;
+								}
+
+								.sectionimg {
+									margin-left: 5px;
+								}
+
+								.sectioninfo div:first-child {
+									font-size: 13px;
+									font-weight: 600;
+									margin-bottom: 2px;
+								}
+
+								.sectioninfo div:last-child {
+									margin-top: 4px;
+								}
+							}
+						}
+
+						.ownerinfo {
+							margin-top: 13px;
+							width: 100%;
+							height: 40px;
+							@include flex(center, flex-start, row, 10px);
+
+							& button {
+								padding: 7px 15px;
+								outline: 1px solid $border-color;
+								color: black;
+								width: 15%;
+								border: none;
+							}
+
+							& button:first-child {
+								padding: 7px 25px;
+								border: none;
+								background-color: $second-accent-color;
+								color: $primary-color;
+								font-weight: 600;
+								width: 70%;
+							}
+						}
+					}
+				}
+
+				&:hover {
+					box-shadow: rgba(0, 0, 0, 0.157) 0px 2px 6px 0px,
+						rgba(0, 0, 0, 0.118) 0px 1px 6px 0px;
+				}
+			}
+		}
+	}
+
+	.quicklinkbar {
+		width: 180px;
+		height: 100%;
+		background-color: $background-color;
+		@include flex(center, flex-start, column, 10px);
+
+		.quicklink-card {
+			background-color: $primary-color;
+			padding: 10px;
+			font-size: 16px;
+
+			p {
+				font-size: 12px;
+				color: $primary-text-color;
+				margin-bottom: 5px;
+			}
+
+			.quicklink-heading {
+				color: $second-accent-color;
+				font-size: 16px;
+				margin-bottom: -8px;
+			}
+
+			ul li {
+				font-size: 12px;
+				color: #787676;
+				margin-left: -10px;
+				margin-top: 10px;
+			}
+		}
+
+		img {
+			width: 101%;
+		}
+	}
 }

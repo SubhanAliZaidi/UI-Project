@@ -21,9 +21,9 @@ body {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #d5d5d5;
-  background-color: white;
+  background-color: #ffffff;
 }
-.navbar img {
+.navbar > img {
   margin: 5px;
 }
 .navbar .logoside {
@@ -60,12 +60,21 @@ body {
   padding-block: 4px;
   padding-inline: 7px;
   color: #999999;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 2px;
+}
+.navbar .menuside button img {
+  margin-right: 6px;
+}
+.navbar .menuside button span {
+  display: inline-block;
+  padding-left: 7px;
+  margin-top: 1px;
+  border-left: 1px solid #d5d5d5;
 }
 .navbar .menuside .thirdbtn {
   background-color: #009587;
-  color: white;
+  color: #ffffff;
   border: none;
 }
 .navbar .menuside .fourthbtn,
@@ -114,7 +123,6 @@ body {
   position: relative;
   display: inline-block;
   max-width: 160px;
-  white-space: nowrap;
   text-align: left;
   padding: 5px 25px 6px 10px;
   margin-right: -119px;
@@ -129,7 +137,7 @@ body {
   font-weight: 300;
 }
 .search .searchchild button {
-  color: white;
+  color: #ffffff;
   padding: 7px 25px;
   border: none;
   height: 40px;
@@ -166,9 +174,20 @@ body {
 }
 .search .searchchild2 .list {
   background-color: #008387;
-  color: white;
-  border-radius: 11px;
+  color: #ffffff;
+  border-radius: 7px;
   padding: 8px 8px 8px 8px;
+}
+.search .searchchild2 .list div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+}
+.search .searchchild2 .list div img {
+  margin-right: 5px;
+  width: 17px;
 }
 
 .searchfilter {
@@ -181,12 +200,26 @@ body {
   top: 127px;
   overflow: hidden;
 }
+.searchfilter .floattitle {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  background-color: #e3324a;
+  padding: 0px 6px;
+  margin: 0;
+  font-size: 10px;
+  z-index: 1;
+  color: #ffffff;
+  border-radius: 50vw;
+}
 .searchfilter button {
   width: 50%;
   position: relative;
   border: none;
-  padding: 10px 0px;
-  background-color: white;
+  padding: 11px 0px;
+  background-color: #ffffff;
+  font-size: 15px;
+  color: #464646;
 }
 .searchfilter button:first-child {
   border-bottom: 2px solid #009587;
@@ -220,7 +253,7 @@ body {
 }
 .searchfilter .main .sizecontent span:hover {
   background-color: #009587;
-  color: white;
+  color: #ffffff;
 }
 .searchfilter .main .availabilitycontent {
   display: flex;
@@ -330,7 +363,6 @@ input[type=range] {
 }
 .result-parent .result {
   width: 720px;
-  background-color: limegreen;
   height: 100%;
   background-color: #f2f2f2;
 }
@@ -345,7 +377,7 @@ input[type=range] {
 .result-parent .result .result-child .directorypath {
   width: 720px;
   padding: 15px;
-  background-color: white;
+  background-color: #ffffff;
 }
 .result-parent .result .result-child .directorypath .pathchild {
   height: 46px;
@@ -357,6 +389,19 @@ input[type=range] {
 }
 .result-parent .result .result-child .directorypath .pathchild .path {
   width: 60%;
+  font-size: 13px;
+}
+.result-parent .result .result-child .directorypath .pathchild .sort select {
+  padding: 9px;
+  border-radius: 0px;
+  margin-left: 6px;
+  font-size: 13px;
+}
+.result-parent .result .result-child .directorypath .pathchild .sort select:is(:focus, :active) {
+  border: 1px solid #d5d5d5;
+}
+.result-parent .result .result-child .directorypath .pathchild .sort select option {
+  padding: 9px;
   font-size: 13px;
 }
 .result-parent .result .result-child .directorypath .pathchild span {
@@ -374,17 +419,188 @@ input[type=range] {
 }
 .result-parent .result .result-child .actualresult {
   margin-top: 15px;
-  height: 429px;
+  height: 369px;
   width: 100%;
-  background-color: white;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 4px;
+}
+.result-parent .result .result-child .actualresult .firstchild,
+.result-parent .result .result-child .actualresult .secondchild,
+.result-parent .result .result-child .actualresult .thirdchild {
+  padding: 15px;
+}
+.result-parent .result .result-child .actualresult .firstchild {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+  border-bottom: 1px solid #d5d5d5;
+}
+.result-parent .result .result-child .actualresult .firstchild a {
+  font-size: 14px;
+  font-weight: 600;
+}
+.result-parent .result .result-child .actualresult .firstchild p {
+  font-size: 13px;
+  color: #787676;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.result-parent .result .result-child .actualresult .firstchild p a {
+  text-decoration: underline;
+  font-weight: normal;
+  font-size: 13px;
+  color: #464646;
+}
+.result-parent .result .result-child .actualresult .firstchild button {
+  width: 50px;
+  aspect-ratio: 16/9;
+  padding: 6px 8px;
+  background-color: #fff;
+  border-top-left-radius: 50vw;
+  border-bottom-left-radius: 50vw;
+  border: 1px solid #d5d5d5;
+  margin-right: -16px;
+}
+.result-parent .result .result-child .actualresult .secondchild {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+  border-bottom: 1px solid #d5d5d5;
+}
+.result-parent .result .result-child .actualresult .secondchild .rentinfo {
+  width: 33.3333333333%;
+  padding: 3px 10px;
+  text-align: center;
+  color: #464646;
+}
+.result-parent .result .result-child .actualresult .secondchild .rentinfo div:first-child {
+  font-size: 14px;
+  font-weight: 600;
+}
+.result-parent .result .result-child .actualresult .secondchild .rentinfo div:last-child {
+  font-size: 11px;
+}
+.result-parent .result .result-child .actualresult .thirdchild {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 15px;
+}
+.result-parent .result .result-child .actualresult .thirdchild .imagecontainer {
+  width: 36%;
+  height: 180px;
+  background-color: crimson;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer {
+  width: 64%;
+  height: 180px;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .roominfo {
+  width: 100%;
+  height: calc(100% - 55px);
+  border: 3px double #d5d5d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+  row-gap: 5px;
+  flex-wrap: wrap;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .roominfo hr {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #d5d5d5;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .roominfo .sections {
+  width: 50%;
+  font-size: 12px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 0px;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .roominfo .sections .sectioninfo {
+  margin-left: 15px;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .roominfo .sections .sectionimg {
+  margin-left: 5px;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .roominfo .sections .sectioninfo div:first-child {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .roominfo .sections .sectioninfo div:last-child {
+  margin-top: 4px;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .ownerinfo {
+  margin-top: 13px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .ownerinfo button {
+  padding: 7px 15px;
+  outline: 1px solid #d5d5d5;
+  color: black;
+  width: 15%;
+  border: none;
+}
+.result-parent .result .result-child .actualresult .thirdchild .infocontainer .ownerinfo button:first-child {
+  padding: 7px 25px;
+  border: none;
+  background-color: #e3324a;
+  color: #ffffff;
+  font-weight: 600;
+  width: 70%;
+}
+.result-parent .result .result-child .actualresult:hover {
+  box-shadow: rgba(0, 0, 0, 0.157) 0px 2px 6px 0px, rgba(0, 0, 0, 0.118) 0px 1px 6px 0px;
 }
 .result-parent .quicklinkbar {
   width: 180px;
   height: 100%;
-  background-color: cyan;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
 }
 .result-parent .quicklinkbar .quicklink-card {
-  background-color: white;
+  background-color: #ffffff;
   padding: 10px;
   font-size: 16px;
+}
+.result-parent .quicklinkbar .quicklink-card p {
+  font-size: 12px;
+  color: #464646;
+  margin-bottom: 5px;
+}
+.result-parent .quicklinkbar .quicklink-card .quicklink-heading {
+  color: #e3324a;
+  font-size: 16px;
+  margin-bottom: -8px;
+}
+.result-parent .quicklinkbar .quicklink-card ul li {
+  font-size: 12px;
+  color: #787676;
+  margin-left: -10px;
+  margin-top: 10px;
+}
+.result-parent .quicklinkbar img {
+  width: 101%;
 }/*# sourceMappingURL=App.css.map */

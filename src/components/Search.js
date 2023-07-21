@@ -1,4 +1,5 @@
 import React from 'react'
+import listmenuimg from '../assets/listIconWhite.png'
 
 export default function Search() {
   return (
@@ -14,7 +15,7 @@ export default function Search() {
 
         <div className="searchchild2">
           <div className='list'>
-          <div>List</div>
+          <div><img src={listmenuimg} alt="" />List</div>
 
           </div>
           <div className='map'>
