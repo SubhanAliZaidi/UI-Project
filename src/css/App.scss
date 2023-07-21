@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	// font-size: 16px;
 	font-family: sans-serif;
 }
 
@@ -226,12 +225,12 @@ body {
 			column-gap: 17px;
 			flex-wrap: wrap;
 			flex-direction: row;
-
+      
 			span {
-				padding: 8px;
+        padding: 8px;
 				margin: 7px 0px;
 				background-color: #f8f8f8;
-				font-size: 14px;
+				font-size: 12px;
 				text-align: center;
 				width: calc((100% - 65px) / 4);
 				border-radius: 3px;
@@ -244,9 +243,9 @@ body {
 		}
 
 		.availabilitycontent {
-      display: flex;
+      @include flex(center, space-between, row, 0px);
       flex-wrap: wrap;
-      flex-direction: row;
+      row-gap: 8px;
       
 			input[type="radio"] {
 				width: 15px;
@@ -254,20 +253,64 @@ body {
 				accent-color: $first-accent-color;
 			}
 
-      label{
-        font-size: 14px;
-      }
-
       .radiobtn{
         width: calc((100% - 65px) / 2);
       }
+    
 		}
+
+    .tenantcontent{
+      @include flex(center, flex-start, row, 8px);
+      
+      & .radiobtn{
+        width: calc((100% - 20px) / 3);
+      }
+    }
+
+    .apartmentcontent{
+      @include flex(flex-start, flex-start, column, 8px);
+    }
+
+    .furnishingcontent{
+      @include flex(center, flex-start ,row, 8px);
+      
+      & .radiobtn{
+        width: calc((100% - 20px) / 3);
+      }
+    }
+
+    .parkingcontent{
+      @include flex(center, flex-start ,row, 8px);
+      flex-wrap: wrap;
+      
+      & .radiobtn{
+        min-width: calc((100% - 20px) / 2);
+      }
+    }
 	}
 }
 
-.titleheading {
+.radiobtn{
+  @include flex(center,flex-start,row, 7px);
+}
+
+label{
   font-size: 13px;
+}
+
+.titleheading {
+  font-size: 12px;
   font-weight: 600;
+}
+
+input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: $first-accent-color;
+}
+
+input[type="range"] {
+  accent-color: $first-accent-color;
 }
 
 
@@ -280,17 +323,6 @@ body {
 	transition: opacity 0.2s;
 }
 
-.slider::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	background: $first-accent-color;
-	accent-color: #232323;
-	cursor: pointer;
-}
-
 .result-parent {
   position: absolute;
   right: 0;
@@ -298,5 +330,67 @@ body {
   width: calc(100vw - 420px);
   height: 500vh;
   top: 127px;
-  background-color: red;
+  background-color: #f2f2f2;
+  @include flex(center, flex-start,row, 10px);
+
+
+  .result{
+    width: 720px;
+    background-color: limegreen;
+    height: 100%;
+    background-color: #f2f2f2;
+    
+    .result-child{
+      @include flex(center, center, column, 10px);
+      border-radius: 2px;
+      
+      .directorypath{
+        width: 720px;
+        padding: 15px;
+        background-color: white;
+        
+        .pathchild{
+          height: 46px;
+          @include flex(center,space-between, row, 0px);
+
+          .path{
+            width: 60%;
+            font-size: 13px;
+          }
+
+          span{
+            margin-top: 15px;
+          }
+        }
+
+        .showingresult{
+          @include flex(center, center, row, 0px);
+
+          img{
+            margin: 10px;
+          }
+        }
+      }
+
+      .actualresult{
+        margin-top: 15px;
+        height:429px;
+        width: 100%;
+        background-color: white;
+      }
+    }
+
+  }
+
+  .quicklinkbar{
+    width: 180px;
+    height: 100%;
+    background-color: cyan;
+
+    .quicklink-card{
+      background-color: white;
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
 }

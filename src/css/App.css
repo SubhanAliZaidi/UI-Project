@@ -213,7 +213,7 @@ body {
   padding: 8px;
   margin: 7px 0px;
   background-color: #f8f8f8;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
   width: calc((100% - 65px) / 4);
   border-radius: 3px;
@@ -224,24 +224,85 @@ body {
 }
 .searchfilter .main .availabilitycontent {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   flex-direction: row;
+  gap: 0px;
+  flex-wrap: wrap;
+  row-gap: 8px;
 }
 .searchfilter .main .availabilitycontent input[type=radio] {
   width: 15px;
   height: 15px;
   accent-color: #009587;
 }
-.searchfilter .main .availabilitycontent label {
-  font-size: 14px;
-}
 .searchfilter .main .availabilitycontent .radiobtn {
   width: calc((100% - 65px) / 2);
 }
+.searchfilter .main .tenantcontent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+}
+.searchfilter .main .tenantcontent .radiobtn {
+  width: calc((100% - 20px) / 3);
+}
+.searchfilter .main .apartmentcontent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+.searchfilter .main .furnishingcontent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+}
+.searchfilter .main .furnishingcontent .radiobtn {
+  width: calc((100% - 20px) / 3);
+}
+.searchfilter .main .parkingcontent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.searchfilter .main .parkingcontent .radiobtn {
+  min-width: calc((100% - 20px) / 2);
+}
+
+.radiobtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 7px;
+}
+
+label {
+  font-size: 13px;
+}
 
 .titleheading {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
+}
+
+input[type=checkbox] {
+  width: 15px;
+  height: 15px;
+  accent-color: #009587;
+}
+
+input[type=range] {
+  accent-color: #009587;
 }
 
 .slider {
@@ -253,17 +314,6 @@ body {
   transition: opacity 0.2s;
 }
 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #009587;
-  accent-color: #232323;
-  cursor: pointer;
-}
-
 .result-parent {
   position: absolute;
   right: 0;
@@ -271,5 +321,70 @@ body {
   width: calc(100vw - 420px);
   height: 500vh;
   top: 127px;
-  background-color: red;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+}
+.result-parent .result {
+  width: 720px;
+  background-color: limegreen;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.result-parent .result .result-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 2px;
+}
+.result-parent .result .result-child .directorypath {
+  width: 720px;
+  padding: 15px;
+  background-color: white;
+}
+.result-parent .result .result-child .directorypath .pathchild {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+}
+.result-parent .result .result-child .directorypath .pathchild .path {
+  width: 60%;
+  font-size: 13px;
+}
+.result-parent .result .result-child .directorypath .pathchild span {
+  margin-top: 15px;
+}
+.result-parent .result .result-child .directorypath .showingresult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+}
+.result-parent .result .result-child .directorypath .showingresult img {
+  margin: 10px;
+}
+.result-parent .result .result-child .actualresult {
+  margin-top: 15px;
+  height: 429px;
+  width: 100%;
+  background-color: white;
+}
+.result-parent .quicklinkbar {
+  width: 180px;
+  height: 100%;
+  background-color: cyan;
+}
+.result-parent .quicklinkbar .quicklink-card {
+  background-color: white;
+  padding: 10px;
+  font-size: 16px;
 }/*# sourceMappingURL=App.css.map */
